@@ -19,7 +19,7 @@ $usuario = $_SESSION['user'];
 
 <body>
     <?php require_once("../php/partials/nav.php") ?>
-    
+        
     <script src="../static/js/bootstrap.bundle.min.js"></script>
     <script src="../static/jquery/jquery-3.6.0.min.js"></script>
     <script src="../static/js/scripts/main.js" type="module"></script>
