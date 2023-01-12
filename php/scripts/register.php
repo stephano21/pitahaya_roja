@@ -13,6 +13,13 @@ if(isset($_POST['flag'])){
         $area= $_POST['area'];
         $capacidad= $_POST['capacidad'];
         echo create_lote($name,$area,$capacidad);
+    }elseif ($flag==3) {
+        $ruc =$_POST['ruc']; 
+        $name =$_POST['name']; 
+        $address =$_POST['address'];
+        $phone =$_POST['phone'];
+        $mail =$_POST['email'];
+        echo create_proveedor($ruc,$name,$address,$phone,$mail);
     }
 }
 ?>

@@ -6,16 +6,16 @@ export function alert_login(message) {
     $("#alert").html(render);
     //alert(message)
 };
-export function input_only_numbers() {
-    jQuery("#user").on('input', function (e) {
+export function input_only_numbers(target) {
+    jQuery("#"+target).on('input', function (e) {
         // Allow only numbers.
         jQuery(this).val(jQuery(this).val().replace(/[^0-9]/g, ''));
     });
 }
-export function alerts(tag, message){
+export function alerts(tag, message,target){
     let render = `<div class="alert alert-${tag} alert-dismissible fade show" role="alert">
     <strong>${message}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>`;
-    $("#alert").html(render);
+    $("#"+target).html(render);
 }
