@@ -39,10 +39,11 @@ $(function () {
                 type: "POST",
                 data: { id, name, lastname, email, password },
                 success: function (response) {
+                    console.log(response);
                     console.log(response)
                     let data = JSON.parse(response);
-                    alerts(data.class, data.message);
                     if (data.class != "danger") {
+                        alerts(data.class, data.message,"alert");
                         $("#create")[0].reset();
                     }
                 }
@@ -112,7 +113,7 @@ $(function () {
                 console.log(response);
                 let data = JSON.parse(response);
                 console.log(data.message)
-                alerts(data.class, data.message);
+                alerts(data.class, data.message,"alert_s");
 
             }
         })

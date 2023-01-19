@@ -7,9 +7,10 @@ if(isset($_POST['id']) && isset($_POST['password'])){
     $lastname = $_POST['lastname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $new_password=password_hash($password,PASSWORD_DEFAULT);
     $validate=mysqli_query($conn,"SELECT * FROM usuarios WHERE cedula='$id'");
     if(mysqli_num_rows($validate)==0){
-        if(  $sql=mysqli_query($conn,"INSERT INTO usuarios (cedula, nombre, apellido, correo, clave)VALUES('$id','$name','$lastname','$email','$password')")){
+        if(  $sql=mysqli_query($conn,"INSERT INTO usuarios (cedula, nombre, apellido, correo, clave)VALUES('$id','$name','$lastname','$email','$new_password')")){
             $res=array(
                 "class"=>"success",
                 "message"=>"Usuario registrado exitosamente!"

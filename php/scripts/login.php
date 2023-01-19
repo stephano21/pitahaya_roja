@@ -7,7 +7,7 @@ if(isset($_POST['user']) && isset($_POST['password'])){
     $sql=mysqli_query($conn,"SELECT * FROM usuarios WHERE cedula='$user'");
     if(mysqli_num_rows($sql)==1){
         $rows=mysqli_fetch_array($sql);
-        if ($rows['clave']==$password){
+        if (password_verify($password,$rows['clave'])){
             $_SESSION['user']=$user;
             echo TRUE;
         }else{
